@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jescha Jhouane G. Sederio | VA & Social Media Manager</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+:root { --hot-pink: #ff1493; --bg-dark: #0a0c14; }
+body { background-color: #0a0c14; color: #fce7f3; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+.pink-glow { text-shadow: 0 0 10px rgba(255,20,147,0.5); }
+.pink-bg { background-color: #ff1493; }
+.gradient-text { background: linear-gradient(135deg,#f9a8d4,#ec4899,#be185d); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.page-show { display: block; animation: fadeIn 0.35s ease; }
+.page-hide { display: none !important; }
+.fm { font-family: 'Space Mono', monospace; }
+.fd { font-family: 'Syne', sans-serif; }
+.tdot { width:10px;height:10px;background:#ec4899;border-radius:50%;flex-shrink:0;margin-top:6px;box-shadow:0 0 8px #ec489980; }
+.tline { width:1px;background:linear-gradient(to bottom,#ec4899,transparent);margin-left:4px; }
+.tag { display:inline-block;background:rgba(236,72,153,0.1);border:1px solid rgba(236,72,153,0.3);color:#f9a8d4;font-size:0.65rem;padding:2px 8px;border-radius:9999px;letter-spacing:0.05em;font-family:'Space Mono',monospace; }
+.rcard { background:#111827;border:1px solid #1e293b;border-radius:1.5rem; }
+.slabel { font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:#ec4899;font-family:'Space Mono',monospace;margin-bottom:1rem;display:block; }
+.spill { background:#0f172a;border:1px solid #1e293b;color:#94a3b8;font-size:0.65rem;padding:4px 10px;border-radius:6px;transition:all 0.2s;display:inline-block; }
+.spill:hover { border-color:#ec4899;color:#f9a8d4; }
+.divider { border-color:rgba(236,72,153,0.15); }
+.tool-card { display:flex;flex-direction:column;align-items:center;gap:8px;background:#111827;border:1px solid #1e293b;border-radius:12px;padding:16px;transition:all 0.2s; }
+.tool-card:hover { border-color:#ec4899;transform:translateY(-2px); }
+.pcard { display:flex;align-items:center;gap:12px;background:#111827;border:1px solid #1e293b;border-radius:14px;padding:16px;transition:all 0.2s;text-decoration:none; }
+.pcard:hover { border-color:#ec4899;box-shadow:0 0 20px rgba(236,72,153,0.12); }
+.contact-row { display:flex;align-items:center;gap:12px;background:#111827;border:1px solid #1e293b;border-radius:14px;padding:16px 20px;transition:all 0.2s;text-decoration:none; }
+.contact-row:hover { border-color:#ec4899;box-shadow:0 0 20px rgba(236,72,153,0.15); }
+</style>
+</head>
+<body class="antialiased">
+
+<nav class="px-6 py-5 max-w-7xl mx-auto flex justify-between items-center sticky top-0 bg-[#0a0c14]/90 backdrop-blur-sm z-50 border-b border-slate-900">
+  <div class="text-2xl font-black tracking-tighter pink-glow cursor-pointer" onclick="showPage('home')">JJGS.</div>
+  <div class="flex items-center gap-4 md:gap-8">
+    <button onclick="showPage('home');setTimeout(function(){document.getElementById('about').scrollIntoView({behavior:'smooth'})},100)" class="hidden md:block text-sm font-bold uppercase tracking-widest hover:text-pink-500 transition">About</button>
+    <button onclick="showPage('home');setTimeout(function(){document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})},100)" class="hidden md:block text-sm font-bold uppercase tracking-widest hover:text-pink-500 transition">Works</button>
+    <button onclick="showPage('resume')" class="hidden md:block text-sm font-bold uppercase tracking-widest hover:text-pink-500 transition">Resume</button>
+    <button onclick="showPage('more')" class="bg-pink-600 hover:bg-pink-500 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition">More Info ↗</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="home-section" class="page-show">
+  <header class="py-16 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+    <div class="relative group shrink-0">
+      <div class="absolute -inset-1 bg-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+      <div class="relative w-72 h-72 md:w-[420px] md:h-[420px] rounded-2xl border-2 border-[#ff1493] overflow-hidden bg-slate-900 shadow-2xl">
+        <img src="jescha-profile.jpg.png" alt="Jescha" class="w-full h-full object-cover object-top" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <div class="flex-1 text-center md:text-left">
+      <span class="text-pink-500 fm text-xs tracking-widest uppercase font-bold">Virtual Assistant / Social Media Manager</span>
+      <h1 class="text-5xl md:text-7xl font-black mt-4 mb-6 leading-none text-white">Jescha Jhouane<br><span class="gradient-text">G. Sederio</span></h1>
+      <p class="text-lg text-slate-400 max-w-xl leading-relaxed">Virtual Assistant and Social Media Manager with experience in content creation, digital marketing, and platform management. Currently an IT student combining marketing execution with technical thinking.</p>
+      <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+        <button onclick="showPage('resume')" class="pink-bg text-white px-8 py-4 rounded-xl font-bold shadow-xl hover:scale-105 transition">View My Resume</button>
+        <button onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})" class="border border-slate-700 px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition">View Portfolio</button>
+        <button onclick="showPage('more')" class="border border-pink-700 text-pink-400 px-8 py-4 rounded-xl font-bold hover:bg-pink-900/30 transition">More Info</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="py-24 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <div>
+          <h2 class="text-3xl font-bold mb-8 text-white">Virtual Assistant <span class="text-pink-500">&amp; Marketing Strategist</span></h2>
+          <ul class="space-y-6">
+            <li class="flex gap-4"><span class="pink-bg p-2 h-8 w-8 rounded-lg text-xs flex items-center justify-center font-bold text-white shrink-0">01</span><p class="text-slate-300"><strong>Full-Stack SMM:</strong> Directed digital strategy for cleaning services, real estate, and bookkeeping, managing content across 5 platforms.</p></li>
+            <li class="flex gap-4"><span class="pink-bg p-2 h-8 w-8 rounded-lg text-xs flex items-center justify-center font-bold text-white shrink-0">02</span><p class="text-slate-300"><strong>Lead Generation:</strong> Proven ability to generate new leads through networking and online channels.</p></li>
+            <li class="flex gap-4"><span class="pink-bg p-2 h-8 w-8 rounded-lg text-xs flex items-center justify-center font-bold text-white shrink-0">03</span><p class="text-slate-300"><strong>Branding &amp; Design:</strong> Produces 50+ monthly graphic pieces, resulting in a 20% increase in brand recognition.</p></li>
+          </ul>
+        </div>
+        <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800">
+          <h3 class="text-pink-500 fm text-xs mb-4 tracking-widest uppercase">SYSTEMS_EDUCATION.log</h3>
+          <h2 class="text-2xl font-bold mb-6 text-white">The IT Student Edge</h2>
+          <p class="text-slate-400 mb-4"><strong>Academic Achievement:</strong> Graduated with High Honors, Science &amp; Mathematics Excellence Awards.</p>
+          <p class="text-slate-400"><strong>The Advantage:</strong> Analyzes impressions, engagement, and conversion rates to optimize every campaign.</p>
+        </div>
+      </div>
+
+      <!-- Intro Video -->
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-6">
+          <p class="text-pink-500 fm text-xs uppercase tracking-widest mb-2">Get To Know Me</p>
+          <h3 class="text-2xl font-black text-white">Watch My Introduction Video</h3>
+          <p class="text-slate-400 text-sm mt-2">A short introduction about me, my background and what I do.</p>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-pink-500/30 bg-slate-900 shadow-2xl">
+          <video controls class="w-full bg-black" style="max-height:480px">
+            <source src="INTRODUCTION VIDEO.MOV" type="video/mp4">
+            <source src="INTRODUCTION VIDEO.MOV" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="text-slate-600 text-xs mt-3 text-center fm">If the video doesn't play, try opening in Chrome or Safari.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="py-24 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-pink-500 fm text-xs uppercase tracking-widest mb-3">My Work</p>
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">Portfolio <span class="text-pink-500">&amp; Works</span></h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <button onclick="openPicker('reels')" class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 p-8 text-left hover:border-pink-500 transition-all duration-300 hover:shadow-[0_0_40px_rgba(236,72,153,0.2)]">
+          <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="relative">
+            <div class="text-4xl mb-4">🎬</div>
+            <h3 class="text-white text-2xl font-black tracking-tight mb-2">Reel Edits</h3>
+            <p class="text-slate-400 text-sm mb-6">Short-form video edits crafted for engagement and brand storytelling.</p>
+            <div class="flex items-center gap-2 text-pink-400 font-bold text-sm uppercase tracking-widest"><span>View 7 Samples</span><span class="group-hover:translate-x-1 transition-transform">→</span></div>
+          </div>
+        </button>
+        <button onclick="openPicker('graphics')" class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 p-8 text-left hover:border-pink-500 transition-all duration-300 hover:shadow-[0_0_40px_rgba(236,72,153,0.2)]">
+          <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="relative">
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-white text-2xl font-black tracking-tight mb-2">Graphic Works</h3>
+            <p class="text-slate-400 text-sm mb-6">Brand visuals, social media graphics, and design assets.</p>
+            <div class="flex items-center gap-2 text-pink-400 font-bold text-sm uppercase tracking-widest"><span>View Samples</span><span class="group-hover:translate-x-1 transition-transform">→</span></div>
+          </div>
+        </button>
+      </div>
+      <div class="text-center">
+        <button onclick="showPage('managed')" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 rounded-lg border border-slate-700 hover:border-pink-500 transition text-sm font-bold text-slate-300 hover:text-white">📄 Managed Pages ↗</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-slate-900/40 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-pink-500 fm text-xs uppercase tracking-widest mb-3">Tech Stack</p>
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">Tools <span class="text-pink-500">I Use</span></h2>
+        <p class="text-slate-400 mt-3 text-sm">General Virtual Assistant &amp; Video Editing</p>
+      </div>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 mb-12">
+        <div class="tool-card"><img src="DRIVE.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Google Drive"><span class="text-slate-400 text-xs text-center">Google Drive</span></div>
+        <div class="tool-card"><img src="MAIL.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Gmail"><span class="text-slate-400 text-xs text-center">Gmail</span></div>
+        <div class="tool-card"><img src="CALE.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Calendar"><span class="text-slate-400 text-xs text-center">Calendar</span></div>
+        <div class="tool-card"><img src="DOCS.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Docs"><span class="text-slate-400 text-xs text-center">Docs</span></div>
+        <div class="tool-card"><img src="SHEETS.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Sheets"><span class="text-slate-400 text-xs text-center">Sheets</span></div>
+        <div class="tool-card"><img src="PPT.jpg" class="w-10 h-10 object-contain rounded-xl" alt="PowerPoint"><span class="text-slate-400 text-xs text-center">PowerPoint</span></div>
+        <div class="tool-card"><img src="CAN.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Canva"><span class="text-slate-400 text-xs text-center">Canva</span></div>
+        <div class="tool-card"><img src="PHO.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Photoshop"><span class="text-slate-400 text-xs text-center">Photoshop</span></div>
+        <div class="tool-card"><img src="Z.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Zoom"><span class="text-slate-400 text-xs text-center">Zoom</span></div>
+        <div class="tool-card"><img src="CA.jpg" class="w-10 h-10 object-contain rounded-xl" alt="CapCut"><span class="text-slate-400 text-xs text-center">CapCut</span></div>
+        <div class="tool-card"><img src="ME.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Meta"><span class="text-slate-400 text-xs text-center">Meta</span></div>
+        <div class="tool-card"><img src="N.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Notion"><span class="text-slate-400 text-xs text-center">Notion</span></div>
+        <div class="tool-card"><img src="T.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Trello"><span class="text-slate-400 text-xs text-center">Trello</span></div>
+        <div class="tool-card"><img src="M.jpg" class="w-10 h-10 object-contain rounded-xl" alt="Monday"><span class="text-slate-400 text-xs text-center">Monday</span></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><p class="text-pink-500 text-xs font-bold uppercase tracking-widest mb-4">Microsoft</p><div class="flex flex-wrap gap-2"><span class="spill">Word</span><span class="spill">PowerPoint</span><span class="spill">Publisher</span><span class="spill">Excel</span><span class="spill">Teams</span></div></div>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><p class="text-pink-500 text-xs font-bold uppercase tracking-widest mb-4">Video Conference</p><div class="flex flex-wrap gap-2"><span class="spill">Zoom</span><span class="spill">Google Meet</span><span class="spill">Slack</span><span class="spill">Skype</span></div></div>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><p class="text-pink-500 text-xs font-bold uppercase tracking-widest mb-4">Photo &amp; Video Editing</p><div class="flex flex-wrap gap-2"><span class="spill">Canva</span><span class="spill">PicsArt</span><span class="spill">Photoroom</span><span class="spill">Photoshop</span><span class="spill">Adobe Premier</span><span class="spill">CapCut</span><span class="spill">Filmora</span></div></div>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><p class="text-pink-500 text-xs font-bold uppercase tracking-widest mb-4">Email &amp; Calendar</p><div class="flex flex-wrap gap-2"><span class="spill">Gmail</span><span class="spill">Outlook</span><span class="spill">Google Calendar</span><span class="spill">Calendly</span><span class="spill">Google Maps</span></div></div>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><p class="text-pink-500 text-xs font-bold uppercase tracking-widest mb-4">Project Management</p><div class="flex flex-wrap gap-2"><span class="spill">Notion</span><span class="spill">Trello</span><span class="spill">Monday.com</span></div></div>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><p class="text-pink-500 text-xs font-bold uppercase tracking-widest mb-4">Google Drive Tools</p><div class="flex flex-wrap gap-2"><span class="spill">Sheets</span><span class="spill">Docs</span><span class="spill">Slides</span><span class="spill">Forms</span></div></div>
+      </div>
+      <div class="mt-14">
+        <p class="text-center text-pink-500 fm text-xs uppercase tracking-widest mb-8">Social Media Platforms I Can Manage</p>
+        <div class="flex flex-wrap justify-center gap-8">
+          <div class="flex flex-col items-center gap-2"><div class="w-16 h-16 rounded-2xl bg-black flex items-center justify-center shadow-lg hover:scale-110 transition overflow-hidden"><img src="TT.jpg" class="w-full h-full object-cover" alt="TikTok"></div><span class="text-slate-400 text-xs">TikTok</span></div>
+          <div class="flex flex-col items-center gap-2"><div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition overflow-hidden" style="background:#1877F2"><img src="FBb.jpg" class="w-10 h-10 object-contain" alt="Facebook"></div><span class="text-slate-400 text-xs">Facebook</span></div>
+          <div class="flex flex-col items-center gap-2"><div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition overflow-hidden" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)"><img src="IG.jpg" class="w-10 h-10 object-contain" alt="Instagram"></div><span class="text-slate-400 text-xs">Instagram</span></div>
+          <div class="flex flex-col items-center gap-2"><div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition overflow-hidden" style="background:#0A66C2"><img src="LInked.jpg" class="w-10 h-10 object-contain" alt="LinkedIn"></div><span class="text-slate-400 text-xs">LinkedIn</span></div>
+          <div class="flex flex-col items-center gap-2"><div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition overflow-hidden" style="background:#E60023"><img src="PIN" class="w-10 h-10 object-contain" alt="Pinterest"></div><span class="text-slate-400 text-xs">Pinterest</span></div>
+          <div class="flex flex-col items-center gap-2"><div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition overflow-hidden" style="background:#FF0000"><img src="YT.jpg" class="w-10 h-10 object-contain" alt="YouTube"></div><span class="text-slate-400 text-xs">YouTube</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16"><p class="text-pink-500 fm text-xs uppercase tracking-widest mb-3">Credentials</p><h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">Certificates <span class="text-pink-500">&amp; Training</span></h2></div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="https://drive.google.com/drive/folders/1aSq8jpGtVg-zkS4D66hi9Ql5Gp8I9gxK?usp=drive_link" target="_blank" class="pcard group"><div class="w-12 h-12 bg-pink-500/10 border border-pink-500/30 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-pink-500/20 transition"><span class="text-xl">🏅</span></div><div><p class="text-slate-200 font-bold text-sm">Social Media Management</p><p class="text-pink-400 text-xs mt-0.5">He Social Armi</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 transition">↗</span></a>
+        <a href="https://drive.google.com/drive/folders/1aSq8jpGtVg-zkS4D66hi9Ql5Gp8I9gxK?usp=drive_link" target="_blank" class="pcard group"><div class="w-12 h-12 bg-pink-500/10 border border-pink-500/30 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-pink-500/20 transition"><span class="text-xl">🏅</span></div><div><p class="text-slate-200 font-bold text-sm">Social Media Management</p><p class="text-pink-400 text-xs mt-0.5">Kursoph</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 transition">↗</span></a>
+        <a href="https://drive.google.com/drive/folders/1aSq8jpGtVg-zkS4D66hi9Ql5Gp8I9gxK?usp=drive_link" target="_blank" class="pcard group"><div class="w-12 h-12 bg-pink-500/10 border border-pink-500/30 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-pink-500/20 transition"><span class="text-xl">🏅</span></div><div><p class="text-slate-200 font-bold text-sm">Graphic Design with Canva</p><p class="text-pink-400 text-xs mt-0.5">Kursoph</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 transition">↗</span></a>
+        <a href="https://drive.google.com/drive/folders/1aSq8jpGtVg-zkS4D66hi9Ql5Gp8I9gxK?usp=drive_link" target="_blank" class="pcard group"><div class="w-12 h-12 bg-pink-500/10 border border-pink-500/30 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-pink-500/20 transition"><span class="text-xl">🏅</span></div><div><p class="text-slate-200 font-bold text-sm">WordPress &amp; Marketing</p><p class="text-pink-400 text-xs mt-0.5">Kursoph</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 transition">↗</span></a>
+        <a href="https://drive.google.com/drive/folders/1aSq8jpGtVg-zkS4D66hi9Ql5Gp8I9gxK?usp=drive_link" target="_blank" class="pcard group"><div class="w-12 h-12 bg-pink-500/10 border border-pink-500/30 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-pink-500/20 transition"><span class="text-xl">🏅</span></div><div><p class="text-slate-200 font-bold text-sm">Copywriting</p><p class="text-pink-400 text-xs mt-0.5">Kursoph</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 transition">↗</span></a>
+        <a href="https://drive.google.com/drive/folders/1aSq8jpGtVg-zkS4D66hi9Ql5Gp8I9gxK?usp=drive_link" target="_blank" class="pcard group"><div class="w-12 h-12 bg-pink-500/10 border border-pink-500/30 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-pink-500/20 transition"><span class="text-xl">🏅</span></div><div><p class="text-slate-200 font-bold text-sm">FB Ads Autopilot</p><p class="text-pink-400 text-xs mt-0.5">Kursoph</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 transition">↗</span></a>
+      </div>
+      <div class="text-center mt-8"><a href="https://drive.google.com/drive/folders/1aSq8jpGtVg-zkS4D66hi9Ql5Gp8I9gxK?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 text-sm font-bold uppercase tracking-widest transition">View All Certificates ↗</a></div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 bg-slate-900/40 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14"><p class="text-pink-500 fm text-xs uppercase tracking-widest mb-3">Get In Touch</p><h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">Contact <span class="text-pink-500">Me</span></h2></div>
+      <div class="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto">
+        <a href="https://www.facebook.com/jeschasederio" target="_blank" class="contact-row"><div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:#1877F2"><svg class="w-5 h-5 text-white" fill="white" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div><div><p class="text-slate-500 text-xs uppercase tracking-widest">Facebook</p><p class="text-slate-200 font-bold text-sm">jeschasederio</p></div></a>
+        <a href="/cdn-cgi/l/email-protection#29434c5a4a41484341465c48474c5a4c4d4c5b4046694e44484045074a4644" class="contact-row"><div class="w-10 h-10 bg-pink-600 rounded-xl flex items-center justify-center shrink-0"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><p class="text-slate-500 text-xs uppercase tracking-widest">Email</p><p class="text-slate-200 font-bold text-sm"><span class="__cf_email__" data-cfemail="264c4355454e474c4e495347484355434243544f4966414b474f4a0845494b">[email&#160;protected]</span></p></div></a>
+        <a href="https://www.linkedin.com/in/jescha-jhouane-sederio-smm" target="_blank" class="contact-row"><div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:#0A66C2"><svg class="w-5 h-5" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div><p class="text-slate-500 text-xs uppercase tracking-widest">LinkedIn</p><p class="text-slate-200 font-bold text-sm">jescha-jhouane-sederio-smm</p></div></a>
+      </div>
+    </div>
+  </section>
+  <footer class="py-10 text-center border-t border-slate-900"><p class="text-slate-600 text-xs tracking-widest uppercase">Jescha Jhouane G. Sederio &copy; 2026</p></footer>
+</div>
+
+<!-- MANAGED -->
+<div id="managed-section" class="page-hide max-w-5xl mx-auto px-6 py-12">
+  <button onclick="showPage('home')" class="text-pink-500 fm text-xs font-bold uppercase tracking-widest hover:underline mb-10 flex items-center gap-2">← Back to Home</button>
+  <div class="rcard p-8 md:p-12">
+    <span class="slabel">Social Media Portfolio</span>
+    <h1 class="fd text-4xl md:text-5xl font-black gradient-text uppercase leading-none mb-2">Managed Pages</h1>
+    <p class="text-slate-400 text-sm mb-10">A selection of social media accounts and pages I have managed, grown, and created content for.</p>
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-5"><div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:#1877F2"><svg viewBox="0 0 24 24" class="w-4 h-4" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div><h3 class="text-white font-black text-lg">Facebook</h3></div>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="https://www.facebook.com/hodgepodgecleaning" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-pink-300 font-black text-sm fm" style="background:rgba(24,119,242,0.2)">H</div><div><p class="text-slate-200 font-bold text-sm">Hodge Podge Cleaning</p><p class="text-slate-500 text-xs fm">@hodgepodgecleaning</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.facebook.com/rolandsecretario108" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-pink-300 font-black text-sm fm" style="background:rgba(24,119,242,0.2)">L</div><div><p class="text-slate-200 font-bold text-sm">Landor's Camp</p><p class="text-slate-500 text-xs fm">@rolandsecretario108</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.facebook.com/teamoceanbreeze" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-pink-300 font-black text-sm fm" style="background:rgba(24,119,242,0.2)">T</div><div><p class="text-slate-200 font-bold text-sm">Team Ocean Breeze</p><p class="text-slate-500 text-xs fm">@teamoceanbreeze</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.facebook.com/tobcleaning" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-pink-300 font-black text-sm fm" style="background:rgba(24,119,242,0.2)">T</div><div><p class="text-slate-200 font-bold text-sm">TOB Cleaning</p><p class="text-slate-500 text-xs fm">@tobcleaning</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.facebook.com/profile.php?id=100092425824274" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-pink-300 font-black text-sm fm" style="background:rgba(24,119,242,0.2)">D</div><div><p class="text-slate-200 font-bold text-sm">DMCA Soundpro</p><p class="text-slate-500 text-xs fm">@dmca</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.facebook.com/trc.enterprise" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-pink-300 font-black text-sm fm" style="background:rgba(24,119,242,0.2)">T</div><div><p class="text-slate-200 font-bold text-sm">TRC Enterprise</p><p class="text-slate-500 text-xs fm">@trc.enterprise</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.facebook.com/helenrepia18" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-pink-300 font-black text-sm fm" style="background:rgba(24,119,242,0.2)">T</div><div><p class="text-slate-200 font-bold text-sm">Tanay Rizal Staycation</p><p class="text-slate-500 text-xs fm">@tanayrizalstaycation</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.facebook.com/profile.php?id=61585242493627" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-pink-300 font-black text-sm fm" style="background:rgba(24,119,242,0.2)">W</div><div><p class="text-slate-200 font-bold text-sm">Wendellman Foundation</p><p class="text-slate-500 text-xs fm">@wendellmanfoundation</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+      </div>
+    </div>
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-5"><div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div><h3 class="text-white font-black text-lg">Instagram</h3></div>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="https://www.instagram.com/hodgepodgecleaning/" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">H</div><div><p class="text-slate-200 font-bold text-sm">Hodge Podge Cleaning</p><p class="text-slate-500 text-xs fm">@hodgepodgecleaning</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.instagram.com/teamoceanbreezecleaning/" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">T</div><div><p class="text-slate-200 font-bold text-sm">Team Ocean Breeze Cleaning</p><p class="text-slate-500 text-xs fm">@teamoceanbreezecleaning</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.instagram.com/teamoceanbreeze/" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">T</div><div><p class="text-slate-200 font-bold text-sm">Team Ocean Breeze</p><p class="text-slate-500 text-xs fm">@teamoceanbreeze</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.instagram.com/tanayrizalstaycationguide/" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">T</div><div><p class="text-slate-200 font-bold text-sm">Tanay Rizal Staycation Guide</p><p class="text-slate-500 text-xs fm">@tanayrizalstaycationguide</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.instagram.com/dmcasoundpro/" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">D</div><div><p class="text-slate-200 font-bold text-sm">DMCA Sound Pro</p><p class="text-slate-500 text-xs fm">@dmcasoundpro</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.instagram.com/thelocale.list/" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">L</div><div><p class="text-slate-200 font-bold text-sm">The Locale List</p><p class="text-slate-500 text-xs fm">@thelocale.list</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.instagram.com/_wendellman/" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888)">W</div><div><p class="text-slate-200 font-bold text-sm">Wendellman</p><p class="text-slate-500 text-xs fm">@_wendellman</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+      </div>
+    </div>
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-5"><div class="w-8 h-8 bg-black border border-slate-700 rounded-lg flex items-center justify-center shrink-0"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/></svg></div><h3 class="text-white font-black text-lg">TikTok</h3></div>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="https://www.tiktok.com/@hodgepodgecleaning" target="_blank" class="pcard group"><div class="w-9 h-9 bg-black border border-slate-700 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm">H</div><div><p class="text-slate-200 font-bold text-sm">Hodge Podge LLC</p><p class="text-slate-500 text-xs fm">@hodgepodgecleaning</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.tiktok.com/@teamoceanbreeze" target="_blank" class="pcard group"><div class="w-9 h-9 bg-black border border-slate-700 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm">T</div><div><p class="text-slate-200 font-bold text-sm">Team Ocean Breeze</p><p class="text-slate-500 text-xs fm">@teamoceanbreeze</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+        <a href="https://www.tiktok.com/@tobcleaning" target="_blank" class="pcard group"><div class="w-9 h-9 bg-black border border-slate-700 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm">T</div><div><p class="text-slate-200 font-bold text-sm">Team Ocean Breeze Cleaning</p><p class="text-slate-500 text-xs fm">@tobcleaning</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center gap-3 mb-5"><div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:#0A66C2"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><h3 class="text-white font-black text-lg">LinkedIn</h3></div>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="https://www.linkedin.com/company/wendellman-foundation/" target="_blank" class="pcard group"><div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 text-white font-black text-sm fm" style="background:#0A66C2">W</div><div><p class="text-slate-200 font-bold text-sm">Wendellman Foundation</p><p class="text-slate-500 text-xs fm">LinkedIn Company Page</p></div><span class="ml-auto text-slate-600 group-hover:text-pink-400 text-xs">↗</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="mt-8 text-center"><button onclick="showPage('home')" class="text-pink-500 fm text-xs font-bold uppercase tracking-widest hover:underline">← Back to Home</button></div>
+</div>
+
+<!-- RESUME -->
+<div id="resume-section" class="page-hide max-w-5xl mx-auto px-6 py-12">
+  <div class="flex items-center justify-between mb-8 gap-4 flex-wrap">
+    <button onclick="showPage('home')" class="text-pink-500 fm text-xs font-bold hover:underline uppercase tracking-widest flex items-center gap-2">← Back to Home</button>
+    <a href="RESUME.pdf" download="Jescha_Sederio_Resume.pdf" class="flex items-center gap-2 bg-pink-600 hover:bg-pink-500 text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-lg transition shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>Download Resume</a>
+  </div>
+  <div class="rcard shadow-2xl p-8 md:p-14">
+    <div class="flex flex-col md:flex-row justify-between border-b divider pb-10 mb-12 gap-6">
+      <div><span class="slabel">Curriculum Vitae</span><h1 class="fd text-4xl md:text-6xl font-black gradient-text uppercase leading-none">Resume</h1><p class="text-slate-200 mt-4 text-xl font-bold tracking-wide">Jescha Jhouane G. Sederio</p><p class="text-pink-500 tracking-widest fm text-xs uppercase mt-1">Virtual Assistant &amp; Strategist</p><p class="text-slate-400 text-sm mt-3 max-w-md leading-relaxed">A creative and detail-oriented individual with experience in providing high-quality graphic design services and administrative support.</p></div>
+      <div class="text-sm text-slate-400 space-y-2 text-right shrink-0"><p class="text-slate-500 text-xs uppercase tracking-widest mb-3">Contact</p><p>📧 <a href="/cdn-cgi/l/email-protection#89e3ecfaeae1e8e3e1e6fce8e7ecfaecedecfbe0e6c9eee4e8e0e5a7eae6e4" class="text-pink-400 hover:underline"><span class="__cf_email__" data-cfemail="305a55435358515a585f45515e554355545542595f70575d51595c1e535f5d">[email&#160;protected]</span></a></p><p>📱 09998396512</p><p>📍 San Francisco, General Trias, Cavite</p><p>💬 live:.cid.411327cdee981f16</p></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="md:col-span-1 space-y-10">
+        <div><span class="slabel">Education</span><div class="space-y-6"><div><p class="text-slate-200 font-bold text-sm">Tropical Innovative School of Excellence</p><p class="text-pink-500 fm text-xs mt-0.5">2023–2024</p><ul class="text-slate-400 text-xs mt-2 space-y-1"><li>— With High Honor · Scholar</li><li>— School Student President</li></ul></div><div><p class="text-slate-200 font-bold text-sm">Gov. Luis A. Ferrer Jr. East National High School</p><p class="text-pink-500 fm text-xs mt-0.5">2017–2021</p><ul class="text-slate-400 text-xs mt-2 space-y-1"><li>— Graduated with High Honor</li><li>— Regional/Division Press Conf. Qualifier</li><li>— 1st Place Column Writing</li><li>— YES-O District President</li></ul></div><div><p class="text-slate-200 font-bold text-sm">Glory Advance Christian Learning Center</p><p class="text-pink-500 fm text-xs mt-0.5">2011–2017</p><ul class="text-slate-400 text-xs mt-2 space-y-1"><li>— First Honor (G1–G6)</li><li>— School Student President</li><li>— Congressman Excellence Awards</li></ul></div></div></div>
+        <div><span class="slabel">Certifications</span><ul class="text-slate-400 text-xs space-y-2"><li class="flex gap-2"><span class="text-pink-500">✦</span>Social Media Management – He Social Armi</li><li class="flex gap-2"><span class="text-pink-500">✦</span>Social Media Management – Kursoph</li><li class="flex gap-2"><span class="text-pink-500">✦</span>Graphic Design with Canva – Kursoph</li><li class="flex gap-2"><span class="text-pink-500">✦</span>WordPress &amp; Marketing – Kursoph</li><li class="flex gap-2"><span class="text-pink-500">✦</span>Copywriting – Kursoph</li><li class="flex gap-2"><span class="text-pink-500">✦</span>FB Ads Autopilot – Kursoph</li></ul></div>
+        <div><span class="slabel">Skills</span><div class="flex flex-wrap gap-2"><span class="spill">Canva</span><span class="spill">WordPress</span><span class="spill">Social Media Strategy</span><span class="spill">Content Creation</span><span class="spill">Copywriting</span><span class="spill">Community Mgmt</span><span class="spill">GoHighLevel</span><span class="spill">HubSpot</span><span class="spill">Mailchimp</span><span class="spill">SEO</span><span class="spill">Zapier/Make</span><span class="spill">Shopify</span><span class="spill">Google Drive</span><span class="spill">Print Design</span><span class="spill">Logo Design</span><span class="spill">Brand Identity</span><span class="spill">FB Ads Manager</span><span class="spill">Admin Support</span></div></div>
+        <div><span class="slabel">Character References</span><div class="space-y-4 text-xs text-slate-400"><div><p class="text-slate-200 font-bold">Roland Secretario</p><p class="text-pink-500">Landor's Camp / CEO</p><p>+63951-419-1718</p><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5320363021362732213a3c213c3f323d3713343e323a3f7d303c3e">[email&#160;protected]</a></p></div><div><p class="text-slate-200 font-bold">Ma. Clara Vanessa R. Dizon</p><p class="text-pink-500">Virtual Assistant</p><p>+639761467391</p><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6a5aaa7b4a7b0a7a8a3b5b5a7a2afbca9a8e8a4b3b5afa8a3b5b586a1aba7afaae8a5a9ab">[email&#160;protected]</a></p></div></div></div>
+      </div>
+      <div class="md:col-span-2"><span class="slabel">Work Experience</span><div class="space-y-8">
+        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="tdot"></div><div class="tline flex-1 mt-2"></div></div><div class="pb-8 flex-1"><div class="flex flex-wrap justify-between items-start gap-2"><div><p class="text-slate-100 font-bold">Social Media Manager</p><p class="text-pink-400 text-xs fm mt-0.5">Wendellman Foundation</p></div><span class="tag">Feb 2026–Present</span></div><ul class="mt-3 text-slate-400 text-xs space-y-1.5 leading-relaxed"><li>— Manage Facebook, Instagram, and LinkedIn platforms.</li><li>— Plan and schedule content for consistent brand presence.</li><li>— Develop marketing strategies to increase engagement.</li><li>— Manage and optimize campaigns through Ads Manager.</li><li>— Monitor performance metrics and adjust strategies.</li></ul></div></div>
+        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="tdot"></div><div class="tline flex-1 mt-2"></div></div><div class="pb-8 flex-1"><div class="flex flex-wrap justify-between items-start gap-2"><div><p class="text-slate-100 font-bold">Marketing Strategist</p><p class="text-pink-400 text-xs fm mt-0.5">Team Ocean Breeze · Full Time</p></div><span class="tag">May–Nov 2025</span></div><ul class="mt-3 text-slate-400 text-xs space-y-1.5 leading-relaxed"><li>— Directed digital marketing strategy for 4 small businesses.</li><li>— Multi-platform content creation: Facebook, Instagram, TikTok, YouTube, LinkedIn.</li><li>— Conducted competitive market research.</li><li>— Analyzed performance data to optimize content strategy.</li></ul></div></div>
+        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="tdot"></div><div class="tline flex-1 mt-2"></div></div><div class="pb-8 flex-1"><div class="flex flex-wrap justify-between items-start gap-2"><div><p class="text-slate-100 font-bold">Social Media Manager</p><p class="text-pink-400 text-xs fm mt-0.5">Myunmess · Part Time</p></div><span class="tag">Jun–Nov 2025</span></div><ul class="mt-3 text-slate-400 text-xs space-y-1.5 leading-relaxed"><li>— Planned and delivered content aligned with brand voice.</li><li>— Engaged with followers and nurtured online communities.</li><li>— Managed scheduling, posting, and trend monitoring.</li></ul></div></div>
+        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="tdot"></div><div class="tline flex-1 mt-2"></div></div><div class="pb-8 flex-1"><div class="flex flex-wrap justify-between items-start gap-2"><div><p class="text-slate-100 font-bold">Graphic Designer</p><p class="text-pink-400 text-xs fm mt-0.5">Self-Employed · Freelancer</p></div><span class="tag">Dec 2021–Present</span></div><ul class="mt-3 text-slate-400 text-xs space-y-1.5 leading-relaxed"><li>— Designed logos, ads, brochures, and websites.</li><li>— 50 graphic pieces/month for client pages.</li><li>— 20% increase in brand recognition.</li></ul></div></div>
+        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="tdot"></div><div class="tline flex-1 mt-2"></div></div><div class="pb-8 flex-1"><div class="flex flex-wrap justify-between items-start gap-2"><div><p class="text-slate-100 font-bold">Landor's Camp Admin</p><p class="text-pink-400 text-xs fm mt-0.5">Part Time</p></div><span class="tag">2023–2024</span></div><ul class="mt-3 text-slate-400 text-xs space-y-1.5 leading-relaxed"><li>— Post scheduling, content creation, visual design.</li><li>— Community engagement across social media.</li></ul></div></div>
+        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="tdot"></div><div class="tline flex-1 mt-2"></div></div><div class="pb-8 flex-1"><div class="flex flex-wrap justify-between items-start gap-2"><div><p class="text-slate-100 font-bold">Booking &amp; Promotion Coordinator</p><p class="text-pink-400 text-xs fm mt-0.5">Tanay Staycations · Part Time</p></div><span class="tag">Feb 2023–Present</span></div><ul class="mt-3 text-slate-400 text-xs space-y-1.5 leading-relaxed"><li>— Handled bookings and reservations.</li><li>— Developed and executed marketing campaigns.</li><li>— Customer support via email, message, and phone.</li></ul></div></div>
+        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="tdot"></div><div class="tline flex-1 mt-2"></div></div><div class="pb-8 flex-1"><div class="flex flex-wrap justify-between items-start gap-2"><div><p class="text-slate-100 font-bold">Independent Insurance Marketer</p><p class="text-pink-400 text-xs fm mt-0.5">OrbixVictus International · Part Time</p></div><span class="tag">Mar 2022–Feb 2024</span></div><ul class="mt-3 text-slate-400 text-xs space-y-1.5 leading-relaxed"><li>— Generated new leads through networking and online channels.</li><li>— Assessed client insurance needs.</li></ul></div></div>
+        <div class="flex gap-4"><div class="flex flex-col items-center"><div class="tdot"></div></div><div class="flex-1"><div class="flex flex-wrap justify-between items-start gap-2"><div><p class="text-slate-100 font-bold">Distributor – Silver Executive</p><p class="text-pink-400 text-xs fm mt-0.5">AIM GLOBAL · Fulltime Onliner</p></div><span class="tag">Mar 2021–Feb 2024</span></div><ul class="mt-3 text-slate-400 text-xs space-y-1.5 leading-relaxed"><li>— Sales and lead generation via telephone and internet marketing.</li><li>— Trained and managed a team of independent distributors.</li><li>— Brand advocacy: built relationships with customers and influencers.</li></ul></div></div>
+      </div></div>
+    </div>
+  </div>
+  <div class="mt-8 text-center"><button onclick="showPage('home')" class="text-pink-500 fm text-xs font-bold uppercase tracking-widest hover:underline">← Back to Home</button></div>
+</div>
+
+<!-- MORE INFO -->
+<div id="more-section" class="page-hide max-w-4xl mx-auto px-6 py-12">
+  <button onclick="showPage('home')" class="text-pink-500 fm text-xs font-bold uppercase tracking-widest hover:underline mb-10 flex items-center gap-2">← Back to Home</button>
+  <div class="rcard p-8 md:p-12 space-y-12">
+
+    <!-- Header / Profile -->
+    <div class="flex flex-col md:flex-row gap-8 items-start border-b divider pb-10">
+      <div class="w-32 h-32 rounded-2xl border-2 border-pink-500 overflow-hidden bg-slate-800 shrink-0"><img src="jescha-profile.jpg.png" alt="Jescha" class="w-full h-full object-cover object-top" onerror="this.style.display='none'"></div>
+      <div><span class="slabel">Personal Profile</span><h1 class="fd text-3xl md:text-4xl font-black gradient-text uppercase leading-none mb-2">Jescha Jhouane G. Sederio</h1><p class="text-pink-500 fm text-xs uppercase tracking-widest mb-4">VA · Social Media Manager · IT Student · Graphic Designer</p><p class="text-slate-400 text-sm leading-relaxed">A creative, driven, and detail-oriented person who balances a growing VA and social media career with a passion for technology, engineering, and continuous learning.</p></div>
+    </div>
+
+    <!-- Contact + Connect -->
+    <div class="grid md:grid-cols-2 gap-10 border-b divider pb-12">
+      <div><span class="slabel">Personal Details</span><div class="space-y-4 text-sm"><div class="flex gap-3"><span>📍</span><div><p class="text-slate-500 text-xs uppercase tracking-widest">Location</p><p class="text-slate-200">San Francisco, General Trias, Cavite</p></div></div><div class="flex gap-3"><span>📱</span><div><p class="text-slate-500 text-xs uppercase tracking-widest">Phone</p><p class="text-slate-200">09998396512</p></div></div><div class="flex gap-3"><span>📧</span><div><p class="text-slate-500 text-xs uppercase tracking-widest">Email</p><p class="text-slate-200"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfb5baacbcb7beb5b7b0aabeb1baacbabbbaadb6b09fb8b2beb6b3f1bcb0b2">[email&#160;protected]</a></p></div></div><div class="flex gap-3"><span>💬</span><div><p class="text-slate-500 text-xs uppercase tracking-widest">Skype</p><p class="text-slate-200">live:.cid.411327cdee981f16</p></div></div></div></div>
+      <div><span class="slabel">Connect With Me</span><div class="space-y-3"><a href="https://www.facebook.com/jeschasederio" target="_blank" class="contact-row"><div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:#1877F2"><svg class="w-4 h-4" fill="white" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div><div><p class="text-slate-500 text-xs">Facebook</p><p class="text-slate-200 text-sm font-semibold">jeschasederio</p></div></a><a href="/cdn-cgi/l/email-protection#1b717e6878737a7173746e7a757e687e7f7e6972745b7c767a727735787476" class="contact-row"><div class="w-8 h-8 bg-pink-600 rounded-lg flex items-center justify-center shrink-0"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><p class="text-slate-500 text-xs">Email</p><p class="text-slate-200 text-sm font-semibold"><span class="__cf_email__" data-cfemail="73191600101b12191b1c06121d1600161716011a1c33141e121a1f5d101c1e">[email&#160;protected]</span></p></div></a><a href="https://www.linkedin.com/in/jescha-jhouane-sederio-smm" target="_blank" class="contact-row"><div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:#0A66C2"><svg class="w-4 h-4" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div><p class="text-slate-500 text-xs">LinkedIn</p><p class="text-slate-200 text-sm font-semibold">jescha-jhouane-sederio-smm</p></div></a></div></div>
+    </div>
+
+    <!-- Identity -->
+    <div class="border-b divider pb-12"><span class="slabel">Identity &amp; Personality</span><div class="grid grid-cols-2 md:grid-cols-3 gap-3"><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">♑</span><span class="text-slate-300 text-xs ml-2">Capricorn</span></div><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">🧠</span><span class="text-slate-300 text-xs ml-2">INTJ-type thinker</span></div><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">🔍</span><span class="text-slate-300 text-xs ml-2">Analytical mind</span></div><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">🗺️</span><span class="text-slate-300 text-xs ml-2">Strategic planner</span></div><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">📖</span><span class="text-slate-300 text-xs ml-2">Curious learner</span></div><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">🚀</span><span class="text-slate-300 text-xs ml-2">Ambitious</span></div><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">💡</span><span class="text-slate-300 text-xs ml-2">Independent thinker</span></div><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">🔧</span><span class="text-slate-300 text-xs ml-2">Problem solver</span></div><div class="bg-slate-900 border border-pink-500/20 rounded-xl px-4 py-3"><span class="text-pink-400 text-xs">🎯</span><span class="text-slate-300 text-xs ml-2">Detail-oriented</span></div></div></div>
+
+    <!-- Education & Career -->
+    <div class="border-b divider pb-12"><span class="slabel">Education &amp; Career</span><div class="grid md:grid-cols-2 gap-6"><div class="bg-slate-900 border border-slate-800 rounded-xl p-5"><p class="text-pink-400 text-xs font-bold uppercase tracking-widest mb-4">📚 Education</p><div class="space-y-2 text-slate-400 text-sm"><p class="flex gap-2"><span class="text-pink-500">▸</span>IT student (1st year)</p><p class="flex gap-2"><span class="text-pink-500">▸</span>Tech enthusiast</p><p class="flex gap-2"><span class="text-pink-500">▸</span>Future engineer mindset</p><p class="flex gap-2"><span class="text-pink-500">▸</span>Web development learner</p><p class="flex gap-2"><span class="text-pink-500">▸</span>Cybersecurity learner</p></div></div><div class="bg-slate-900 border border-slate-800 rounded-xl p-5"><p class="text-pink-400 text-xs font-bold uppercase tracking-widest mb-4">💼 Career</p><div class="space-y-2 text-slate-400 text-sm"><p class="flex gap-2"><span class="text-pink-500">▸</span>Virtual Assistant</p><p class="flex gap-2"><span class="text-pink-500">▸</span>Social media strategist</p><p class="flex gap-2"><span class="text-pink-500">▸</span>Digital marketer</p><p class="flex gap-2"><span class="text-pink-500">▸</span>Interested in Civil Engineering &amp; CS paths</p><p class="flex gap-2"><span class="text-pink-500">▸</span>Interested in PH engineering board exams</p></div></div></div></div>
+
+    <!-- Skills -->
+    <div class="border-b divider pb-12"><span class="slabel">Skills &amp; Strengths</span><div class="flex flex-wrap gap-3"><span class="spill">🎨 Content creator</span><span class="spill">📣 Marketing strategist</span><span class="spill">📋 Organized planner</span><span class="spill">⚙️ Systems thinker</span><span class="spill">🔬 Research-driven</span><span class="spill">⚡ Fast learner</span><span class="spill">🔄 Multitasker</span></div></div>
+
+    <!-- Interests -->
+    <div class="border-b divider pb-12"><span class="slabel">Interests</span><div class="grid grid-cols-2 md:grid-cols-3 gap-3"><div class="bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm flex gap-2 items-center"><span class="text-pink-400">💻</span>Technology</div><div class="bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm flex gap-2 items-center"><span class="text-pink-400">🏢</span>Business systems</div><div class="bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm flex gap-2 items-center"><span class="text-pink-400">⚡</span>Productivity &amp; efficiency</div><div class="bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm flex gap-2 items-center"><span class="text-pink-400">✍️</span>Story writing</div><div class="bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm flex gap-2 items-center"><span class="text-pink-400">🎬</span>Brain-stimulating movies</div><div class="bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-slate-300 text-sm flex gap-2 items-center"><span class="text-pink-400">♟️</span>Strategy and logic</div></div></div>
+
+    <!-- Lifestyle -->
+    <div class="border-b divider pb-12"><span class="slabel">Lifestyle</span><div class="flex flex-wrap gap-3"><span class="spill">🌙 Late-night worker</span><span class="spill">📚 Balancing school and work</span><span class="spill">🚀 Self-improvement focused</span><span class="spill">🎯 Career-driven</span></div></div>
+
+    <!-- Creative Side -->
+    <div class="border-b divider pb-12"><span class="slabel">Creative Side</span><div class="grid grid-cols-2 md:grid-cols-4 gap-3"><div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center"><div class="text-2xl mb-2">✍️</div><p class="text-slate-300 text-xs">Story writer</p></div><div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center"><div class="text-2xl mb-2">💕</div><p class="text-slate-300 text-xs">Slow-burn romance fan</p></div><div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center"><div class="text-2xl mb-2">😄</div><p class="text-slate-300 text-xs">Humor content creator</p></div><div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center"><div class="text-2xl mb-2">🎬</div><p class="text-slate-300 text-xs">Reel / short-form video creator</p></div></div></div>
+
+    <!-- References -->
+    <div><span class="slabel">Character References</span><div class="grid md:grid-cols-2 gap-6"><div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700"><p class="text-slate-200 font-bold">Roland Secretario</p><p class="text-pink-400 text-xs fm mt-1 mb-3">Landor's Camp / CEO</p><p class="text-slate-400 text-sm">📞 +63951-419-1718</p><p class="text-slate-400 text-sm">✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5d6c0c6d7c0d1c4d7cccad7cac9c4cbc1e5c2c8c4ccc98bc6cac8">[email&#160;protected]</a></p></div><div class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700"><p class="text-slate-200 font-bold">Ma. Clara Vanessa R. Dizon</p><p class="text-pink-400 text-xs fm mt-1 mb-3">Virtual Assistant</p><p class="text-slate-400 text-sm">📞 +639761467391</p><p class="text-slate-400 text-sm">✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b28272a392a3d2a252e38382a2f2231242565293e3822252e38380b2c262a222765282426">[email&#160;protected]</a></p></div></div></div>
+  </div>
+  <div class="mt-8 text-center"><button onclick="showPage('home')" class="text-pink-500 fm text-xs font-bold uppercase tracking-widest hover:underline">← Back to Home</button></div>
+</div>
+
+<!-- PICKER MODAL -->
+<div id="picker-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+  <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-xl shadow-2xl">
+    <div class="flex items-center justify-between p-6 border-b border-slate-800"><h3 id="picker-title" class="text-white font-bold text-lg tracking-tight"></h3><button onclick="closePicker()" class="text-slate-500 hover:text-pink-400 text-xl font-bold">✕</button></div>
+    <ul id="picker-list" class="p-6 space-y-3 max-h-96 overflow-y-auto"></ul>
+    <div class="p-4 border-t border-slate-800 text-center"><button onclick="closePicker()" class="text-xs text-slate-500 hover:text-pink-400 uppercase tracking-widest font-bold transition">Close</button></div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var PAGES = ['home','managed','resume','more'];
+
+function showPage(name) {
+  for (var i = 0; i < PAGES.length; i++) {
+    var el = document.getElementById(PAGES[i] + '-section');
+    if (el) {
+      if (PAGES[i] === name) {
+        el.className = el.className.replace('page-hide','page-show');
+        if (el.className.indexOf('page-show') === -1) el.className += ' page-show';
+      } else {
+        el.className = el.className.replace('page-show','page-hide');
+        if (el.className.indexOf('page-hide') === -1) el.className += ' page-hide';
+      }
+    }
+  }
+  window.scrollTo(0,0);
+}
+
+function showHome()   { showPage('home'); }
+function showResume() { showPage('resume'); }
+function showMore()   { showPage('more'); }
+
+var portfolioData = {
+  reels: { title: "🎬 Sample Reel Edits", items: [
+    {name:"Reel Sample 1",url:"https://drive.google.com/file/d/17RJka_yWdZnBldX_IkIcQwkdejay5L9h/view?usp=drive_link"},
+    {name:"Reel Sample 2",url:"https://drive.google.com/file/d/1DhyY5Sa6MAwZwjEfuY9YFHB8j5mYBRmh/view?usp=drive_link"},
+    {name:"Reel Sample 3",url:"https://drive.google.com/file/d/1Y5PRv_y3XdM4I4c1u0sLLzQ_RhKdkWiF/view?usp=drive_link"},
+    {name:"Reel Sample 4",url:"https://drive.google.com/file/d/1Z8kb-oYyXVlgxR9ocP437L3gyGRx6X-6/view?usp=drive_link"},
+    {name:"Reel Sample 5",url:"https://drive.google.com/file/d/1wHcMwsaQcjctuvj9jiaene2Qfu2sWBOM/view?usp=drive_link"},
+    {name:"Reel Sample 6",url:"https://drive.google.com/file/d/1wTyXQtYesKrjfrMJuoKJj6acpt8fFGuF/view?usp=drive_link"},
+    {name:"Reel Sample 7",url:"https://drive.google.com/file/d/1fZX6dThH_tFGux68m-VDZPlGPztHD26J/view?usp=drive_link"}
+  ]},
+  graphics: { title: "🎨 Sample Graphic Works", items: [
+    {name:"Cleaning Business Graphics – Vol. 1",url:"https://drive.google.com/file/d/1jnu_479VRoGfb0yxCfPK7ZDtu6TsJfLa/view?usp=drive_link"},
+    {name:"Cleaning Business Graphics – Vol. 2",url:"https://drive.google.com/file/d/1ZyfDTbUgr7eCNomMbBTTLSjCogXfhAZy/view?usp=drive_link"},
+    {name:"Real Estate Graphics",url:"https://drive.google.com/file/d/1qLd8VSHFM3132yrEjFrUJ6qR1v-efqub/view?usp=drive_link"},
+    {name:"Other Graphic Works – Full Folder",url:"https://drive.google.com/drive/folders/1-4thlwXmf2WymbCko8nXliupZGsDyfG8?usp=drive_link"}
+  ]}
+};
+
+function openPicker(type) {
+  var data = portfolioData[type];
+  document.getElementById('picker-title').textContent = data.title;
+  document.getElementById('picker-list').innerHTML = data.items.map(function(item) {
+    return '<li><a href="'+item.url+'" target="_blank" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-pink-500 transition group"><span class="text-pink-400 text-lg">📄</span><span class="text-slate-200 text-sm font-medium group-hover:text-white">'+item.name+'</span><span class="ml-auto text-slate-500 text-xs group-hover:text-pink-400">View →</span></a></li>';
+  }).join('');
+  var modal = document.getElementById('picker-modal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+
+function closePicker() {
+  var modal = document.getElementById('picker-modal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+}
+
+document.getElementById('picker-modal').addEventListener('click', function(e) {
+  if (e.target === this) closePicker();
+});
+</script>
+</body>
+</html>
