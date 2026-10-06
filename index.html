@@ -459,7 +459,7 @@
           <div class="phone-mockup" aria-label="Phone preview of a short-form reel editing sample">
             <div class="phone-earpiece" aria-hidden="true"></div>
             <div class="phone-screen">
-              <video id="editing-video" controls playsinline preload="none" aria-label="Recent short-form reel editing sample">
+              <video id="editing-video" controls playsinline muted preload="metadata" data-autoplay-scroll aria-label="Recent short-form reel editing sample">
                 <source src="SAMPLE%20(3).mp4" type="video/mp4">
                 Your browser does not support embedded video. Use the editing samples link below to view more.
               </video>
@@ -483,7 +483,7 @@
         </div>
 
         <div class="video-reference">
-          <video controls playsinline preload="none" poster="video-reference-poster.svg" aria-label="Third-party video editing style reference">
+          <video controls playsinline muted preload="metadata" poster="video-reference-poster.svg" data-autoplay-scroll aria-label="Third-party video editing style reference">
             <source src="74967744-94bd-4224-8c00-ae795ff089cd.mp4" type="video/mp4">
             Your browser does not support embedded video playback.
           </video>
@@ -738,6 +738,34 @@
       { src: '5%20things%20i%27d%20do%20on%20my%20next%20ground%20up%20build_v2.mp4', title: 'Reel editing sample 4' }
     ];
 
+    const autoplayVideos = document.querySelectorAll('video[data-autoplay-scroll]');
+    autoplayVideos.forEach((video) => {
+      video.muted = true;
+      video.playsInline = true;
+      video.setAttribute('playsinline', 'true');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            video.pause();
+            return;
+          }
+
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.then === 'function') {
+            playPromise.catch(() => {
+              // Autoplay can be blocked until the user interacts; the native controls still work.
+            });
+          }
+        });
+      }, {
+        threshold: 0.35,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      observer.observe(video);
+    });
+
     let activeEditingVideo = 0;
     const editingVideo = document.getElementById('editing-video');
     const editingVideoSource = editingVideo.querySelector('source');
@@ -748,6 +776,19 @@
       editingVideo.setAttribute('aria-label', editingVideoSamples[activeEditingVideo].title);
       document.getElementById('video-count').textContent = `Reel ${activeEditingVideo + 1} / ${editingVideoSamples.length}`;
       editingVideo.load();
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const playPromise = editingVideo.play();
+            if (playPromise && typeof playPromise.then === 'function') {
+              playPromise.catch(() => {});
+            }
+          }
+        });
+      }, { threshold: 0.35 });
+
+      observer.observe(editingVideo);
     };
     document.getElementById('video-previous').addEventListener('click', () => updateEditingVideo(activeEditingVideo - 1));
     document.getElementById('video-next').addEventListener('click', () => updateEditingVideo(activeEditingVideo + 1));
