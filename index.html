@@ -77,11 +77,12 @@
     .intro-video-heading .eyebrow { justify-content: center; margin-bottom: 12px; }
     .intro-video-heading h2 { margin-bottom: 8px; font-size: clamp(30px, 4vw, 40px); }
     .intro-video-heading > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 14px; }
-    .intro-video-frame { overflow: hidden; border: 1px solid #edd6e1; border-radius: 7px; background: #2e2228; box-shadow: 0 15px 40px rgba(67, 31, 49, .12); }
-    .intro-video-frame { position: relative; }
-    .intro-video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.1) contrast(1.02); }
+    .intro-video-frame { position: relative; overflow: hidden; border: 1px solid #edd6e1; border-radius: 7px; background: #2e2228; box-shadow: 0 15px 40px rgba(67, 31, 49, .12); cursor: pointer; }
+    .intro-video-frame::after { position: absolute; inset: 0; display: grid; place-items: center; font-size: 56px; color: #fff; opacity: 0.8; pointer-events: none; content: '▶'; z-index: 3; background: rgba(0, 0, 0, 0.2); transition: opacity .3s ease; }
+    .intro-video-frame:hover::after { opacity: 1; }
+    .intro-video-poster { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
     .intro-video-frame iframe,
-    .intro-video-frame video { position: relative; z-index: 1; display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #0b090c; }
+    .intro-video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 2; }
     .intro-video-fallback { margin: 16px 0 0; text-align: center; color: var(--muted); font-size: 12px; }
     .intro-video-fallback a { color: var(--green); font-weight: 700; text-underline-offset: 3px; }
 
@@ -419,10 +420,9 @@
           <h2 id="intro-video-title">A quick introduction</h2>
           <p>The video will try to start muted. If your browser blocks autoplay, press play in the video player.</p>
         </div>
-        <div class="intro-video-frame">
-          <img class="intro-video-poster" src="jescha-profile.jpg.png" alt="" aria-hidden="true">
-          <iframe class="intro-video-player" src="https://drive.google.com/file/d/1vXFFcJ4mMFrjVebiHutwiPdS8tndjBDv/preview?autoplay=1" title="Introduction video for Jescha Jhouane G. Sederio" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
+        <a href="https://drive.google.com/file/d/1vXFFcJ4mMFrjVebiHutwiPdS8tndjBDv/view?usp=sharing" class="intro-video-frame" target="_blank" rel="noopener" title="Watch introduction video in Google Drive">
+          <img class="intro-video-poster" src="jescha-profile.jpg.png" alt="Introduction video thumbnail" loading="eager">
+        </a>
         <p class="intro-video-fallback">Trouble viewing? <a href="https://drive.google.com/file/d/1vXFFcJ4mMFrjVebiHutwiPdS8tndjBDv/view?usp=sharing" target="_blank" rel="noopener">Open the introduction video in Google Drive ↗</a></p>
       </div>
     </section>
@@ -517,13 +517,13 @@
           <div class="social-post-grid">
             <article class="social-post">
               <div class="social-post-header"><span class="social-post-avatar" aria-hidden="true">G</span><span><strong>Graphic design mockup</strong><small>Drag or scroll down in the preview to browse</small></span></div>
-              <div class="social-post-preview"><img src="graphics-mockup-preview.png" alt="Graphic design mockup preview" loading="lazy"></div>
+              <div class="social-post-preview"><img src="graphics-mockup-preview.png" alt="Graphic design mockup preview" loading="eager" decoding="async"></div>
               <div class="social-post-actions" aria-hidden="true"><span>♡　◯　➤</span><span>▱</span></div>
               <a class="social-post-open" href="W3%20The%20Locale%20Content%20Engine%20.pdf" target="_blank" rel="noopener">Open full graphics mockup PDF ↗</a>
             </article>
             <article class="social-post">
               <div class="social-post-header"><span class="social-post-avatar" aria-hidden="true">R</span><span><strong>Real estate graphics</strong><small>Drag or scroll down in the preview to browse</small></span></div>
-              <div class="social-post-preview"><img src="real-estate-graphics-preview.png" alt="Real estate graphics mockup preview" loading="lazy"></div>
+              <div class="social-post-preview"><img src="real-estate-graphics-preview.png" alt="Real estate graphics mockup preview" loading="eager" decoding="async"></div>
               <div class="social-post-actions" aria-hidden="true"><span>♡　◯　➤</span><span>▱</span></div>
               <a class="social-post-open" href="https://drive.google.com/file/d/1qLd8VSHFM3132yrEjFrUJ6qR1v-efqub/view?usp=sharing" target="_blank" rel="noopener">Open full real-estate graphics PDF ↗</a>
             </article>
