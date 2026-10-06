@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Editing style reference video</title>
+  <desc id="desc">A pink and plum preview card identifying this video as an editing-style reference.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#251321"/>
+      <stop offset="0.52" stop-color="#6a1f4a"/>
+      <stop offset="1" stop-color="#d94888"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".34" r=".6">
+      <stop offset="0" stop-color="#ffb7d5" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#ffb7d5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="720" height="1280" fill="url(#bg)"/>
+  <rect width="720" height="1280" fill="url(#glow)"/>
+  <circle cx="585" cy="180" r="190" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+  <circle cx="585" cy="180" r="145" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="2"/>
+  <circle cx="115" cy="1010" r="230" fill="none" stroke="#fff" stroke-opacity=".1" stroke-width="2"/>
+  <rect x="52" y="74" width="210" height="42" rx="21" fill="#fff" fill-opacity=".15" stroke="#fff" stroke-opacity=".34"/>
+  <text x="157" y="102" fill="#fff" font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="2">STYLE REFERENCE</text>
+  <text x="58" y="500" fill="#ffe4ef" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="5">VIDEO EDITING</text>
+  <text x="54" y="590" fill="#fff" font-family="Arial,sans-serif" font-size="62" font-weight="700">Your footage.</text>
+  <text x="54" y="668" fill="#fff" font-family="Arial,sans-serif" font-size="62" font-weight="700">Your story.</text>
+  <text x="58" y="734" fill="#ffe4ef" font-family="Arial,sans-serif" font-size="24">A style example—not my original video.</text>
+  <circle cx="360" cy="900" r="64" fill="#fff" fill-opacity=".95"/>
+  <path d="M344 867 L344 933 L399 900 Z" fill="#c43b78"/>
+  <text x="360" y="1115" fill="#fff" font-family="Arial,sans-serif" font-size="19" text-anchor="middle" letter-spacing="3">PLAY TO VIEW REFERENCE</text>
+</svg>
