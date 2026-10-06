@@ -740,51 +740,44 @@
 
     const autoplayVideos = document.querySelectorAll('video[data-autoplay-scroll]');
     autoplayVideos.forEach((video) => {
-      let userPaused = false;
-
       video.muted = true;
       video.playsInline = true;
       video.setAttribute('playsinline', 'true');
 
-      video.addEventListener('pause', () => {
-        if (video.dataset.autoPause === 'true') {
-          delete video.dataset.autoPause;
-          return;
-        }
-        userPaused = true;
-      });
+      const tryAutoplay = () => {
+        const rect = video.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const isClearlyVisible = rect.top < viewportHeight * 0.9 && rect.bottom > viewportHeight * 0.15;
 
-      video.addEventListener('play', () => {
-        userPaused = false;
-      });
+        if (isClearlyVisible && video.paused) {
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.then === 'function') {
+            playPromise.catch(() => {
+              // Browsers can still block autoplay until the user interacts. The native controls still work.
+            });
+          }
+        } else if (!isClearlyVisible && !video.paused) {
+          video.pause();
+        }
+      };
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            video.dataset.autoPause = 'true';
+          if (entry.isIntersecting) {
+            tryAutoplay();
+          } else {
             video.pause();
-            return;
-          }
-
-          const rect = video.getBoundingClientRect();
-          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-          const isClearlyVisible = rect.top < viewportHeight * 0.85 && rect.bottom > viewportHeight * 0.15;
-
-          if (isClearlyVisible && !userPaused) {
-            const playPromise = video.play();
-            if (playPromise && typeof playPromise.then === 'function') {
-              playPromise.catch(() => {
-                // Browsers can still block autoplay until the viewer interacts. The native controls stay available.
-              });
-            }
           }
         });
       }, {
-        threshold: 0.55,
-        rootMargin: '-12% 0px -12% 0px'
+        threshold: 0.45,
+        rootMargin: '-8% 0px -8% 0px'
       });
 
       observer.observe(video);
+      window.addEventListener('scroll', tryAutoplay, { passive: true });
+      window.addEventListener('resize', tryAutoplay);
+      tryAutoplay();
     });
 
     let activeEditingVideo = 0;
