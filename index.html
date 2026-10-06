@@ -78,8 +78,10 @@
     .intro-video-heading h2 { margin-bottom: 8px; font-size: clamp(30px, 4vw, 40px); }
     .intro-video-heading > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 14px; }
     .intro-video-frame { overflow: hidden; border: 1px solid #edd6e1; border-radius: 7px; background: #2e2228; box-shadow: 0 15px 40px rgba(67, 31, 49, .12); }
+    .intro-video-frame { position: relative; }
+    .intro-video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.1) contrast(1.02); }
     .intro-video-frame iframe,
-    .intro-video-frame video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #0b090c; }
+    .intro-video-frame video { position: relative; z-index: 1; display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #0b090c; }
     .intro-video-fallback { margin: 16px 0 0; text-align: center; color: var(--muted); font-size: 12px; }
     .intro-video-fallback a { color: var(--green); font-weight: 700; text-underline-offset: 3px; }
 
@@ -155,6 +157,7 @@
     .phone-mockup { position: relative; width: min(100%, 250px); justify-self: center; padding: 12px 9px 13px; border: 2px solid #4c2c3d; border-radius: 38px; background: linear-gradient(145deg, #392433, #170f15); box-shadow: 0 22px 44px rgba(50, 23, 37, .24), inset 0 0 0 2px rgba(255, 255, 255, .09); }
     .phone-earpiece { position: relative; z-index: 1; width: 52px; height: 8px; margin: 0 auto 8px; border-radius: 99px; background: #0d080c; }
     .phone-screen { overflow: hidden; border-radius: 27px; background: #0b080a; }
+    .phone-screen iframe,
     .phone-screen video { display: block; width: 100%; aspect-ratio: 9 / 16; border: 0; background: #0b080a; object-fit: contain; }
     .phone-home-indicator { width: 58px; height: 4px; margin: 9px auto 0; border-radius: 99px; background: rgba(255, 255, 255, .72); }
     .phone-video-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 14px; }
@@ -417,10 +420,8 @@
           <p>The video will try to start muted. If your browser blocks autoplay, press play in the video player.</p>
         </div>
         <div class="intro-video-frame">
-          <video class="intro-video-player" controls muted playsinline autoplay preload="metadata" poster="jescha-profile.jpg.png" aria-label="Introduction video for Jescha Jhouane G. Sederio">
-            <source src="INTRODUCTION%20VIDEO.MOV" type="video/quicktime">
-            Your browser does not support embedded video. Use the link below to open the introduction video in Google Drive.
-          </video>
+          <img class="intro-video-poster" src="jescha-profile.jpg.png" alt="" aria-hidden="true">
+          <iframe class="intro-video-player" src="https://drive.google.com/file/d/1vXFFcJ4mMFrjVebiHutwiPdS8tndjBDv/preview?autoplay=1" title="Introduction video for Jescha Jhouane G. Sederio" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <p class="intro-video-fallback">Trouble viewing? <a href="https://drive.google.com/file/d/1vXFFcJ4mMFrjVebiHutwiPdS8tndjBDv/view?usp=sharing" target="_blank" rel="noopener">Open the introduction video in Google Drive ↗</a></p>
       </div>
@@ -463,10 +464,7 @@
           <div class="phone-mockup" aria-label="Phone preview of a short-form reel editing sample">
             <div class="phone-earpiece" aria-hidden="true"></div>
             <div class="phone-screen">
-              <video id="editing-video" controls playsinline muted preload="metadata" data-autoplay-scroll aria-label="Recent short-form reel editing sample">
-                <source src="SAMPLE%20(3).mp4" type="video/mp4">
-                Your browser does not support embedded video. Use the editing samples link below to view more.
-              </video>
+              <iframe id="editing-video" src="https://drive.google.com/file/d/17RJka_yWdZnBldX_IkIcQwkdejay5L9h/preview?autoplay=0" title="Recent short-form reel editing sample 1" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             <div class="phone-home-indicator" aria-hidden="true"></div>
             <div class="phone-video-controls" aria-label="Choose a reel editing sample">
@@ -519,13 +517,13 @@
           <div class="social-post-grid">
             <article class="social-post">
               <div class="social-post-header"><span class="social-post-avatar" aria-hidden="true">G</span><span><strong>Graphic design mockup</strong><small>Drag or scroll down in the preview to browse</small></span></div>
-              <div class="social-post-preview"><iframe src="W3%20The%20Locale%20Content%20Engine%20.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Scrollable graphic design mockup PDF preview" loading="lazy"></iframe></div>
+              <div class="social-post-preview"><img src="graphics-mockup-preview.png" alt="Graphic design mockup preview" loading="lazy"></div>
               <div class="social-post-actions" aria-hidden="true"><span>♡　◯　➤</span><span>▱</span></div>
               <a class="social-post-open" href="W3%20The%20Locale%20Content%20Engine%20.pdf" target="_blank" rel="noopener">Open full graphics mockup PDF ↗</a>
             </article>
             <article class="social-post">
               <div class="social-post-header"><span class="social-post-avatar" aria-hidden="true">R</span><span><strong>Real estate graphics</strong><small>Drag or scroll down in the preview to browse</small></span></div>
-              <div class="social-post-preview"><iframe src="https://drive.google.com/file/d/1qLd8VSHFM3132yrEjFrUJ6qR1v-efqub/preview?embedded=true" title="Scrollable real-estate graphics PDF preview" loading="lazy" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
+              <div class="social-post-preview"><img src="real-estate-graphics-preview.png" alt="Real estate graphics mockup preview" loading="lazy"></div>
               <div class="social-post-actions" aria-hidden="true"><span>♡　◯　➤</span><span>▱</span></div>
               <a class="social-post-open" href="https://drive.google.com/file/d/1qLd8VSHFM3132yrEjFrUJ6qR1v-efqub/view?usp=sharing" target="_blank" rel="noopener">Open full real-estate graphics PDF ↗</a>
             </article>
@@ -736,10 +734,10 @@
     };
 
     const editingVideoSamples = [
-      { src: 'SAMPLE%20(3).mp4', title: 'Recent reel editing sample 1' },
-      { src: 'sample%20(2).mp4', title: 'Recent reel editing sample 2' },
-      { src: 'SAMPLE%20(1).mp4', title: 'Reel editing sample 3' },
-      { src: '5%20things%20i%27d%20do%20on%20my%20next%20ground%20up%20build_v2.mp4', title: 'Reel editing sample 4' }
+      { src: 'https://drive.google.com/file/d/17RJka_yWdZnBldX_IkIcQwkdejay5L9h/preview?autoplay=0', title: 'Recent reel editing sample 1' },
+      { src: 'https://drive.google.com/file/d/1DhyY5Sa6MAwZwjEfuY9YFHB8j5mYBRmh/preview?autoplay=0', title: 'Recent reel editing sample 2' },
+      { src: 'https://drive.google.com/file/d/1Y5PRv_y3XdM4I4c1u0sLLzQ_RhKdkWiF/preview?autoplay=0', title: 'Reel editing sample 3' },
+      { src: 'https://drive.google.com/file/d/1Z8kb-oYyXVlgxR9ocP437L3gyGRx6X-6/preview?autoplay=0', title: 'Reel editing sample 4' }
     ];
 
     const autoplayVideos = document.querySelectorAll('video[data-autoplay-scroll]');
@@ -800,28 +798,11 @@
 
     let activeEditingVideo = 0;
     const editingVideo = document.getElementById('editing-video');
-    const editingVideoSource = editingVideo.querySelector('source');
     const updateEditingVideo = (index) => {
       activeEditingVideo = (index + editingVideoSamples.length) % editingVideoSamples.length;
-      editingVideo.pause();
-      editingVideo.muted = false;
-      editingVideoSource.src = editingVideoSamples[activeEditingVideo].src;
+      editingVideo.src = editingVideoSamples[activeEditingVideo].src;
       editingVideo.setAttribute('aria-label', editingVideoSamples[activeEditingVideo].title);
       document.getElementById('video-count').textContent = `Reel ${activeEditingVideo + 1} / ${editingVideoSamples.length}`;
-      editingVideo.load();
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const playPromise = editingVideo.play();
-            if (playPromise && typeof playPromise.then === 'function') {
-              playPromise.catch(() => {});
-            }
-          }
-        });
-      }, { threshold: 0.35 });
-
-      observer.observe(editingVideo);
     };
     document.getElementById('video-previous').addEventListener('click', () => updateEditingVideo(activeEditingVideo - 1));
     document.getElementById('video-next').addEventListener('click', () => updateEditingVideo(activeEditingVideo + 1));
