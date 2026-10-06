@@ -740,9 +740,22 @@
 
     const autoplayVideos = document.querySelectorAll('video[data-autoplay-scroll]');
     autoplayVideos.forEach((video) => {
+      const enableSound = () => {
+        video.muted = false;
+        video.volume = 1;
+      };
+
       video.muted = true;
+      video.volume = 1;
       video.playsInline = true;
       video.setAttribute('playsinline', 'true');
+      video.addEventListener('pointerdown', enableSound, { once: true });
+      video.addEventListener('touchstart', enableSound, { once: true });
+      video.addEventListener('keydown', (event) => {
+        if (event.code === 'Space' || event.code === 'Enter') {
+          enableSound();
+        }
+      }, { once: true });
 
       const tryAutoplay = () => {
         const rect = video.getBoundingClientRect();
