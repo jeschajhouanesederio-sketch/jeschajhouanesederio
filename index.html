@@ -193,7 +193,7 @@
     .credential small { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; }
     .certificate-slideshow { max-width: 880px; margin: 0 auto; overflow: hidden; border: 1px solid #efdce5; border-radius: 10px; background: var(--white); box-shadow: var(--shadow); }
     .certificate-viewer { position: relative; padding: clamp(14px, 3vw, 28px); background: #fffafd; }
-    .certificate-viewer iframe { display: block; width: 100%; aspect-ratio: 1.42 / 1; border: 1px solid var(--line); border-radius: 5px; background: #fff; }
+    .certificate-viewer img { display: block; width: 100%; aspect-ratio: 1.42 / 1; border: 1px solid var(--line); border-radius: 5px; background: #fff; object-fit: contain; }
     .certificate-info { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 24px 0; }
     .certificate-info h3 { margin: 0; font: 700 15px/1.4 var(--display); }
     .certificate-info p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
@@ -347,6 +347,7 @@
       .editing-actions { justify-content: center; }
       .video-reference { grid-template-columns: 1fr; }
       .social-post-grid { grid-template-columns: minmax(0, 1fr); max-width: 410px; }
+      .social-post-preview { aspect-ratio: 3 / 4; }
       .web-capabilities-grid { grid-template-columns: 1fr; }
       .resource-grid, .tool-groups { grid-template-columns: 1fr; }
       .tool-logo-grid { grid-template-columns: repeat(3, 1fr); }
@@ -358,7 +359,7 @@
       .credential-grid { grid-template-columns: 1fr; }
       .certificate-info { align-items: flex-start; flex-direction: column; padding-inline: 17px; }
       .certificate-viewer { padding: 10px; }
-      .certificate-viewer iframe { aspect-ratio: 1.05 / 1; }
+      .certificate-viewer img { aspect-ratio: 1.42 / 1; }
       .certificate-controls { gap: 14px; }
       .contact-card { grid-template-columns: 1fr; gap: 23px; }
       .contact-actions { justify-content: flex-start; }
@@ -518,13 +519,13 @@
           <div class="social-post-grid">
             <article class="social-post">
               <div class="social-post-header"><span class="social-post-avatar" aria-hidden="true">G</span><span><strong>Graphic design mockup</strong><small>Scroll inside the preview to browse all pages</small></span></div>
-              <div class="social-post-preview"><iframe src="W3%20The%20Locale%20Content%20Engine%20.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Scrollable graphic design mockup PDF preview" loading="lazy" scrolling="yes"></iframe></div>
+              <div class="social-post-preview"><iframe src="W3%20The%20Locale%20Content%20Engine%20.pdf#toolbar=0&amp;navpanes=0&amp;view=Fit" title="Scrollable graphic design mockup PDF preview" loading="lazy" scrolling="yes"></iframe></div>
               <div class="social-post-actions" aria-hidden="true"><span>♡　◯　➤</span><span>▱</span></div>
               <a class="social-post-open" href="W3%20The%20Locale%20Content%20Engine%20.pdf" target="_blank" rel="noopener">Open full graphics mockup PDF ↗</a>
             </article>
             <article class="social-post">
               <div class="social-post-header"><span class="social-post-avatar" aria-hidden="true">R</span><span><strong>Real estate graphics</strong><small>Scroll inside the preview to browse all pages</small></span></div>
-              <div class="social-post-preview"><iframe src="real-estate-business-graphics-compressed.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Scrollable real-estate graphics PDF preview" loading="lazy" scrolling="yes"></iframe></div>
+              <div class="social-post-preview"><iframe src="real-estate-business-graphics-compressed.pdf#toolbar=0&amp;navpanes=0&amp;view=Fit" title="Scrollable real-estate graphics PDF preview" loading="lazy" scrolling="yes"></iframe></div>
               <div class="social-post-actions" aria-hidden="true"><span>♡　◯　➤</span><span>▱</span></div>
               <a class="social-post-open" href="https://drive.google.com/file/d/1qLd8VSHFM3132yrEjFrUJ6qR1v-efqub/view?usp=sharing" target="_blank" rel="noopener">Open full real-estate graphics PDF ↗</a>
             </article>
@@ -622,7 +623,7 @@
         </div>
         <div class="certificate-slideshow" aria-label="Certificate slideshow. Use the left and right arrow keys to change certificates." tabindex="0">
           <div class="certificate-viewer">
-            <iframe id="certificate-frame" title="Social Media Management certificate from The Social Armi" src="https://drive.google.com/file/d/1TWlOwSWl1HGwQQEk9zty2aDi4W50oiPz/preview" allow="autoplay" loading="lazy"></iframe>
+            <img id="certificate-image" src="https://drive.google.com/thumbnail?id=1TWlOwSWl1HGwQQEk9zty2aDi4W50oiPz&amp;sz=w1600" alt="Social Media Management certificate from The Social Armi" loading="eager" decoding="async">
           </div>
           <div class="certificate-info" aria-live="polite">
             <div><h3 id="certificate-title">Social Media Management</h3><p id="certificate-provider">The Social Armi · Certificate of Completion</p></div>
@@ -818,7 +819,7 @@
     ];
 
     let activeCertificate = 0;
-    const certificateFrame = document.getElementById('certificate-frame');
+    const certificateImage = document.getElementById('certificate-image');
     const certificateDots = document.getElementById('certificate-dots');
     const certificateSlideshow = document.querySelector('.certificate-slideshow');
 
@@ -830,8 +831,8 @@
       document.getElementById('certificate-provider').textContent = certificate.provider;
       document.getElementById('certificate-count').textContent = `${activeCertificate + 1} / ${certificates.length}`;
       document.getElementById('certificate-open').href = viewUrl;
-      certificateFrame.title = `${certificate.title} certificate from ${certificate.provider}`;
-      certificateFrame.src = `https://drive.google.com/file/d/${certificate.id}/preview`;
+      certificateImage.alt = `${certificate.title} certificate from ${certificate.provider}`;
+      certificateImage.src = `https://drive.google.com/thumbnail?id=${certificate.id}&sz=w1600`;
       certificateDots.querySelectorAll('button').forEach((dot, dotIndex) => {
         dot.setAttribute('aria-current', String(dotIndex === activeCertificate));
       });
