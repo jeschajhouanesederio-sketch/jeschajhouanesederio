@@ -78,7 +78,8 @@
     .intro-video-heading h2 { margin-bottom: 8px; font-size: clamp(30px, 4vw, 40px); }
     .intro-video-heading > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 14px; }
     .intro-video-frame { overflow: hidden; border: 1px solid #edd6e1; border-radius: 7px; background: #2e2228; box-shadow: 0 15px 40px rgba(67, 31, 49, .12); }
-    .intro-video-frame iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+    .intro-video-frame iframe,
+    .intro-video-frame video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #0b090c; }
     .intro-video-fallback { margin: 16px 0 0; text-align: center; color: var(--muted); font-size: 12px; }
     .intro-video-fallback a { color: var(--green); font-weight: 700; text-underline-offset: 3px; }
 
@@ -416,7 +417,10 @@
           <p>The video will try to start muted. If your browser blocks autoplay, press play in the video player.</p>
         </div>
         <div class="intro-video-frame">
-          <iframe src="https://drive.google.com/file/d/1vXFFcJ4mMFrjVebiHutwiPdS8tndjBDv/preview?autoplay=1&amp;mute=1&amp;playsinline=1" title="Introduction video for Jescha Jhouane G. Sederio" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <video class="intro-video-player" controls muted playsinline autoplay preload="metadata" poster="jescha-profile.jpg.png" aria-label="Introduction video for Jescha Jhouane G. Sederio">
+            <source src="INTRODUCTION%20VIDEO.MOV" type="video/quicktime">
+            Your browser does not support embedded video. Use the link below to open the introduction video in Google Drive.
+          </video>
         </div>
         <p class="intro-video-fallback">Trouble viewing? <a href="https://drive.google.com/file/d/1vXFFcJ4mMFrjVebiHutwiPdS8tndjBDv/view?usp=sharing" target="_blank" rel="noopener">Open the introduction video in Google Drive ↗</a></p>
       </div>
@@ -749,13 +753,14 @@
       video.volume = 1;
       video.playsInline = true;
       video.setAttribute('playsinline', 'true');
-      video.addEventListener('pointerdown', enableSound, { once: true });
-      video.addEventListener('touchstart', enableSound, { once: true });
+      video.addEventListener('click', enableSound);
+      video.addEventListener('pointerdown', enableSound);
+      video.addEventListener('touchstart', enableSound);
       video.addEventListener('keydown', (event) => {
         if (event.code === 'Space' || event.code === 'Enter') {
           enableSound();
         }
-      }, { once: true });
+      });
 
       const tryAutoplay = () => {
         const rect = video.getBoundingClientRect();
@@ -799,6 +804,7 @@
     const updateEditingVideo = (index) => {
       activeEditingVideo = (index + editingVideoSamples.length) % editingVideoSamples.length;
       editingVideo.pause();
+      editingVideo.muted = false;
       editingVideoSource.src = editingVideoSamples[activeEditingVideo].src;
       editingVideo.setAttribute('aria-label', editingVideoSamples[activeEditingVideo].title);
       document.getElementById('video-count').textContent = `Reel ${activeEditingVideo + 1} / ${editingVideoSamples.length}`;
