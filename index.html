@@ -521,9 +521,9 @@
             </article>
             <article class="social-post">
               <div class="social-post-header"><span class="social-post-avatar" aria-hidden="true">R</span><span><strong>Real estate graphics</strong><small>Drag or scroll down in the preview to browse</small></span></div>
-              <div class="social-post-preview"><iframe src="_A%20real%20estate%20business%20graphics_compressed.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Scrollable real-estate graphics PDF preview" loading="lazy"></iframe></div>
+              <div class="social-post-preview"><iframe src="real-estate-business-graphics-compressed.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Scrollable real-estate graphics PDF preview" loading="lazy"></iframe></div>
               <div class="social-post-actions" aria-hidden="true"><span>♡　◯　➤</span><span>▱</span></div>
-              <a class="social-post-open" href="_A%20real%20estate%20business%20graphics_compressed.pdf" target="_blank" rel="noopener">Open full real-estate graphics PDF ↗</a>
+              <a class="social-post-open" href="real-estate-business-graphics-compressed.pdf" target="_blank" rel="noopener">Open full real-estate graphics PDF ↗</a>
             </article>
           </div>
         </div>
@@ -740,27 +740,48 @@
 
     const autoplayVideos = document.querySelectorAll('video[data-autoplay-scroll]');
     autoplayVideos.forEach((video) => {
+      let userPaused = false;
+
       video.muted = true;
       video.playsInline = true;
       video.setAttribute('playsinline', 'true');
 
+      video.addEventListener('pause', () => {
+        if (video.dataset.autoPause === 'true') {
+          delete video.dataset.autoPause;
+          return;
+        }
+        userPaused = true;
+      });
+
+      video.addEventListener('play', () => {
+        userPaused = false;
+      });
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
+            video.dataset.autoPause = 'true';
             video.pause();
             return;
           }
 
-          const playPromise = video.play();
-          if (playPromise && typeof playPromise.then === 'function') {
-            playPromise.catch(() => {
-              // Autoplay can be blocked until the user interacts; the native controls still work.
-            });
+          const rect = video.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          const isClearlyVisible = rect.top < viewportHeight * 0.85 && rect.bottom > viewportHeight * 0.15;
+
+          if (isClearlyVisible && !userPaused) {
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.then === 'function') {
+              playPromise.catch(() => {
+                // Browsers can still block autoplay until the viewer interacts. The native controls stay available.
+              });
+            }
           }
         });
       }, {
-        threshold: 0.35,
-        rootMargin: '0px 0px -10% 0px'
+        threshold: 0.55,
+        rootMargin: '-12% 0px -12% 0px'
       });
 
       observer.observe(video);
